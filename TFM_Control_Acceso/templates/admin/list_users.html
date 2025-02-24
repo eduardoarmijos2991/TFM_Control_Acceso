@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+    <style>
+        /* Estilo general para el cuerpo */
+        body {
+            background-color: #ffffff;  /* Fondo blanco */
+            color: #333333;  /* Color del texto */
+            font-family: Arial, sans-serif;  /* Fuente */
+        }
+        /* Estilo para la tabla de usuarios */
+        .user-table {
+            width: 80%;  /* Ancho de la tabla */
+            margin: 50px auto;  /* Centramos la tabla */
+            border-collapse: collapse;  /* Colapsamos los bordes */
+        }
+        .user-table th, .user-table td {
+            border: 1px solid #ccc;  /* Borde de las celdas */
+            padding: 10px;  /* Espaciado interno de las celdas */
+            text-align: left;  /* Alineación del texto */
+        }
+        .user-table th {
+            background-color: #f8f9fa;  /* Fondo de los encabezados */
+        }
+        .user-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;  /* Fondo para las filas pares */
+        }
+    </style>
+</head>
+<body>
+    <div class="user-list">
+        <h2>Lista de Usuarios</h2>
+        <!-- Tabla de usuarios -->
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Fingerprint</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.fingerprint }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

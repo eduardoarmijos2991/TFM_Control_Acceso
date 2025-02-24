@@ -1,0 +1,46 @@
+Codigo HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso - Administración</title>
+    <style>
+        /* Estilo general para el cuerpo */
+        body {
+            background-color: #ffffff;  /* Fondo blanco */
+            color: #333333;  /* Color del texto */
+            font-family: Arial, sans-serif;  /* Fuente */
+        }
+        /* Estilo para el formulario de acceso */
+        .access-form {
+            max-width: 300px;  /* Ancho máximo del formulario */
+            margin: 100px auto;  /* Centramos el formulario */
+            padding: 20px;  /* Espaciado interno */
+            border: 1px solid #ccc;  /* Borde gris claro */
+            background-color: #f8f9fa;  /* Fondo gris claro */
+        }
+        /* Estilo para los botones en el formulario */
+        .access-form button {
+            margin-right: 10px;  /* Espacio entre los botones */
+        }
+    </style>
+</head>
+<body>
+    <div class="access-form">
+        <h2>Acceso</h2>
+        <!-- Formulario para acceder como usuario o como administrador -->
+        <form method="POST" action="/access">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit" name="action" value="access">Acceder</button>
+            <button type="submit" name="action" value="admin">Administrador</button>
+        </form>
+        <!-- Mensaje de error si existe -->
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

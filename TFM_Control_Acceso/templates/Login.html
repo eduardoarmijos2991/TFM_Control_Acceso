@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Administración</title>
+    <style>
+        /* Estilo general para el cuerpo */
+        body {
+            background-color: #ffffff;  /* Fondo blanco */
+            color: #333333;  /* Color del texto */
+            font-family: Arial, sans-serif;  /* Fuente */
+        }
+        /* Estilo para el formulario de inicio de sesión */
+        .login-form {
+            max-width: 300px;  /* Ancho máximo del formulario */
+            margin: 100px auto;  /* Centramos el formulario */
+            padding: 20px;  /* Espaciado interno */
+            border: 1px solid #ccc;  /* Borde gris claro */
+            background-color: #f8f9fa;  /* Fondo gris claro */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Login</h2>
+        <!-- Formulario de inicio de sesión -->
+        <form method="POST">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <!-- Mensaje de error si existe -->
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
